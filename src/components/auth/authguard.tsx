@@ -18,8 +18,8 @@ const Authguard: React.FC<IProps> = ({ children }) => {
   const path = usePathname();
 
   useEffect(() => {
-    console.log("isUserLoggedin---", isUserLoggedIn);
-
+    console.log("isUserLoggedIn", isUserLoggedIn);
+    console.log("path", path);
     const isTokenExisting: boolean = LocalStorage.getItem(
       CONSTANTS.LOCAL_STORAGE_KEYS.TOKEN
     )

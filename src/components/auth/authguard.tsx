@@ -27,12 +27,9 @@ const Authguard: React.FC<IProps> = ({ children }) => {
       : false;
     dispatch(authAction.updateIsLoggedIn(isTokenExisting));
     if (isTokenExisting) {
-      if (path === CONSTANTS.ROUTING_PATHS.login) {
         router.push(CONSTANTS.ROUTING_PATHS.dashboard);
-      }
     } else {
       router.push(CONSTANTS.ROUTING_PATHS.login);
-      LocalStorage.clearLocalStorage();
     }
   }, [isUserLoggedIn, path]);
 
